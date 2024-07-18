@@ -1,0 +1,18 @@
+.dashboard {
+  display: flex;
+}
+.dashboard-head {
+  background-color: #7ea1ff;
+  padding: 1.4rem;
+  display: flex;
+  height: 90px;
+  align-items: center;
+  box-shadow: inset;
+}
+
+.dashboard-content {
+  width: 88%;
+}
+.admincontent {
+  padding: 2rem;
+}
