@@ -1,0 +1,20 @@
+.button {
+  border: 0;
+  background-color: transparent;
+  font-size: 18;
+  font-weight: bold;
+}
+.buttonGroup {
+  background-color: #7ea1ff;
+  padding: 0.5rem 2rem;
+  border-radius: 10rem;
+}
+.tableOver {
+  overflow-x: visible;
+}
+
+@media screen and (max-width: 520px) {
+  .tableOver {
+    overflow-x: scroll;
+  }
+}
