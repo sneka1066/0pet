@@ -3,6 +3,7 @@ import "./Styles.css";
 
 function Admin7() {
   const [inputBox, setInputBox] = useState([
+    { label: "Station ID:", placeholder: "Enter Station ID" },
     { label: "Station Name:", placeholder: "Enter Station name" },
     { label: "City:", placeholder: "Enter City Name" },
     { label: "District:", placeholder: "Enter District Name" },
