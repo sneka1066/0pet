@@ -1,0 +1,109 @@
+.Add-stations {
+    width: 90%;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+  }
+  
+  .Add-station {
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .Container-body {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+  }
+  
+  .input {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    box-sizing: border-box;
+  }
+  
+  .inputbox {
+    width: 100%;
+    outline: 0;
+    box-shadow: 2px 2px 5px gray;
+    border: 0;
+    border-radius: 25px;
+    font-size: 16px;
+    padding: 0.5rem;
+    text-indent: 1rem;
+  }
+  
+  .subbox {
+    width: 73%;
+    outline: 0;
+    box-shadow: 2px 2px 5px gray;
+    border: 0;
+    border-radius: 25px;
+    font-size: 18px;
+    padding: 0.5rem;
+    text-indent: 1rem;
+    text-align: center;
+    font-weight: 600;
+    background-color: #7ea1ff;
+    margin: 10px 0;
+  }
+  
+  @media screen and (max-width: 920px) {
+    .Container-body {
+      width: 100%;
+    }
+    
+    .input {
+      width: 100%;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  
+    .subbox {
+      width: 90%;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .Add-station {
+      font-size: 20px;
+    }
+  
+    .Container-body {
+      width: 100%;
+    }
+  
+    .input {
+      width: 100%;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  
+    .subbox {
+      width: 90%;
+    }
+  }
+  
