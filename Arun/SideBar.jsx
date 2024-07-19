@@ -1,26 +1,21 @@
 import React from "react";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
 import { Icon } from "@iconify/react";
 import "../css/sidebar.css";
 
 const SideBar = () => {
   return (
-    <div style={{ height: "100vh" }} className="menu ">
-      <div className="logo">
-        <h2>0_PET</h2>
-      </div>
-      <div className="menu--list align-content-baseline justify-content-center">
-        <a href="" className="item">
-          <Icon icon="mingcute:home-3-fill" fontSize={25} />
+    <div className="w-100 menu">
+      <div className="menu--list w-100 align-content-baseline justify-content-center">
+        <a href="" className="item w-100" style={{ fontSize: 18 }}>
+          <Icon icon="mingcute:home-3-fill" fontSize={20} />
           Dashboard
         </a>
-        <a href="" className="item">
-          <Icon icon="bxs:user" fontSize={25} />
+        <a href="" className="item w-100" style={{ fontSize: 18 }}>
+          <Icon icon="bxs:user" fontSize={20} />
           Manage Users
         </a>
-        <a href="" className="item">
-          <Icon icon="material-symbols:water-damage-rounded" fontSize={25} />
+        <a href="" className="item w-100" style={{ fontSize: 18 }}>
+          <Icon icon="material-symbols:water-damage-rounded" fontSize={20} />
           Manage Stations
         </a>
       </div>

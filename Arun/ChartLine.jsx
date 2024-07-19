@@ -1,93 +1,48 @@
-import React, { PureComponent } from "react";
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-} from "recharts";
+import React, { useEffect, useRef } from "react";
+import Chart from "chart.js/auto";
+export default function ChartLine() {
+  const chartRef = useRef(null);
+  const chartInstance = useRef(null);
 
-const ChartLine = () => {
-  const data = [
-    {
-      name: "Page A",
-      uv: 4000,
-      pv: 2400,
-      amt: 2400,
-    },
-    {
-      name: "Page B",
-      uv: 3000,
-      pv: 1398,
-      amt: 2210,
-    },
-    {
-      name: "Page C",
-      uv: 2000,
-      pv: 9800,
-      amt: 2290,
-    },
-    {
-      name: "Page D",
-      uv: 2780,
-      pv: 3908,
-      amt: 2000,
-    },
-    {
-      name: "Page E",
-      uv: 1890,
-      pv: 4800,
-      amt: 2181,
-    },
-    {
-      name: "Page F",
-      uv: 2390,
-      pv: 3800,
-      amt: 2500,
-    },
-    {
-      name: "Page G",
-      uv: 3490,
-      pv: 4300,
-      amt: 2100,
-    },
-  ];
+  useEffect(() => {
+    if (chartInstance.current) {
+      chartInstance.current.destroy();
+    }
+    const myChartRef = chartRef.current.getContext("2d");
 
+    chartInstance.current = new Chart(myChartRef, {
+      type: "line",
+      data: {
+        labels: [1, 5, 10, 15, 20, 25, 30],
+        datasets: [
+          {
+            label: "Current Month",
+            data: [650, 340, 650, 340, 560, 456, 456],
+            fill: false,
+            borderColor: "#7EA1FF",
+            borderWidth: 2,
+          },
+          {
+            label: "Provisions Month",
+            data: [389, 476, 238, 373, 545, 303, 273],
+            fill: false,
+            borderColor: "#898989",
+            borderWidth: 2,
+          },
+        ],
+      },
+    });
+    return () => {
+      if (chartInstance.current) {
+        chartInstance.current.destroy();
+      }
+    };
+  }, []);
   return (
-    <div>
-      <ResponsiveContainer width="100%" height="100%">
-        <LineChart
-          width={500}
-          height={300}
-          data={data}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis yAxisId="left" />
-          <YAxis yAxisId="right" orientation="right" />
-          <Tooltip />
-          <Legend />
-          <Line
-            yAxisId="left"
-            type="monotone"
-            dataKey="pv"
-            stroke="#8884d8"
-            activeDot={{ r: 8 }}
-          />
-          <Line yAxisId="right" type="monotone" dataKey="uv" stroke="#82ca9d" />
-        </LineChart>
-      </ResponsiveContainer>
+    <div className="w-100">
+      <canvas ref={chartRef} style={{ width: "100%" }} />
     </div>
   );
-};
+}
 
-export default ChartLine;
+// export default ChartLine;
